@@ -21,5 +21,3 @@ Router.prototype.route = function(){
     routeFunction(req, res);
   };
 };
-
- 

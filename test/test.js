@@ -16,7 +16,6 @@ describe('http server', () => {
     .post('/trees')
     .send('{"type":"Spruce"}')
     .end((err, res) => {
-      var jsonContent;
       fs.readdir('./data', (err, files) =>{
         var oap = files.length -1;
         fs.readFile('./data/'+ files[oap], (err, data) => {
@@ -26,10 +25,10 @@ describe('http server', () => {
           expect(res).to.have.header('content-type','text/html');
           expect(jsonContent).to.eql('Spruce');
           done();
-        })
-      })
-    })
-  })
+        });
+      });
+    });
+  });
 
   it('should respond to /trees get requests with the contents of the stored files', (done) => {
     request('localhost:3000')
@@ -49,9 +48,9 @@ describe('http server', () => {
               expect(res.text).to.eql(treeList);
               done();
             }
-          })
-        })
-      })
-    })
-  })
-})
+          });
+        });
+      });
+    });
+  });
+});

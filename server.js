@@ -21,9 +21,9 @@ treesRouter.get('/trees', (req, res) => {
           res.write( treeList);
           return res.end();
         }
-      })
-    })
-  })
+      });
+    });
+  });
 });
 
 
@@ -41,7 +41,7 @@ treesRouter.post('/trees', (req, res) => {
       });
     });
     req.on('end', () =>{
-        return res.end();
+      return res.end();
     });
   });
 });
