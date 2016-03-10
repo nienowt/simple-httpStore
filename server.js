@@ -18,13 +18,14 @@ treesRouter.get('/trees', (req, res) => {
         count++;
         treeList += JSON.parse(data.toString()).type + ' ';
         if(count === files.length){
-          res.write(treeList);
+          res.write( treeList);
           return res.end();
         }
       })
     })
   })
 });
+
 
 treesRouter.post('/trees', (req, res) => {
   console.log('/trees post route hit');
